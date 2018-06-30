@@ -20,13 +20,17 @@ public class Teams {
     }
 
     public String getHome() {
-        return home.getHomeName();
+        return home.getHomeTeam();
+    }
+
+    public String getAway() {
+        return away.getAwayTeam();
     }
 
     @Override
     public String toString() {
 
-        return "\nHome: "+home.toString()+"\nAway: "+away.toString();
+        return "\nHome: " + home.toString() + "\nAway: " + away.toString();
     }
 
 }

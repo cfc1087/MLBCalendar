@@ -17,6 +17,10 @@ class Away {
         team = new Team();
     }
 
+    public String getAwayTeam() {
+        return team.getName();
+    }
+
     @Override
     public String toString() {
         return team.toString();

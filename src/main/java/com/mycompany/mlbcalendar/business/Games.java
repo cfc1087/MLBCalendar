@@ -18,12 +18,20 @@ public class Games {
         teams = new Teams();
     }
 
-    public String getTeams() {
+    public String getHome() {
         return teams.getHome();
+    }
+
+    public String getAway() {
+        return teams.getAway();
+    }
+    public String getGameDate(){
+        
+        return gameDate;
     }
 
     @Override
     public String toString() {
-        return "\nGameDate: " + gameDate  + teams;
+        return "\nGameDate: " + gameDate + teams;
     }
 }

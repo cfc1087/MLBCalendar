@@ -17,7 +17,7 @@ class Home {
        team = new Team();
     }
     
-    public String getHomeName(){
+    public String getHomeTeam(){
         return team.getName();
     }
     @Override

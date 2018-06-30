@@ -13,17 +13,14 @@ public class Dates {
 
     private String date; // YYYY-MM-DD
     private final Games games[];
+    private int day;
 
     public Dates() {
         games = new Games[2];
     }
 
-    public int getGameSize() {
-        return this.games.length;
-    }
-
     public Games[] getGames() {
-        return this.games;
+        return games;
     }
 
     @Override
@@ -38,8 +35,13 @@ public class Dates {
         return "--------------\n" + this.date + s;
     }
 
-  public String getDate(){
-      return date;
-  }
+    public String getDate() {
+        return date;
+    }
+
+    public int getDay() {
+        day = Integer.parseInt(date.substring(8, 10));
+        return day;
+    }
 
 }
