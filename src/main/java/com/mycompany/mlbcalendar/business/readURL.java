@@ -17,7 +17,7 @@ import java.net.URL;
  */
 public class readURL {
 
-    private BufferedReader reader = null;
+    //private BufferedReader reader = null;
 
     public static String readURLString(String urlString) throws MalformedURLException, IOException {
         BufferedReader reader = null;
