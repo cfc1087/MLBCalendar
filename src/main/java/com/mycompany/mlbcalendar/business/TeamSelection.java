@@ -14,7 +14,7 @@ import javafx.scene.paint.Color;
 public enum TeamSelection {
 
     ARIZONADIAMONDBACKS("Arizona Diamondbacks", "ARI", 109, Color.rgb(167,25,48)),
-    ATLANTABRAVES("Atlanta Braves", "ATL", 144, Color.rgb(167, 25, 48)),
+    ATLANTABRAVES("Atlanta Braves", "ATL", 144, Color.rgb(12,35,64)),
     BALTIMOREORIOLES("Baltimore Orioles", "BAL", 110, Color.rgb(252, 76, 2)),
     BOSTONREDSOX("Boston Red Sox", "BOS", 111, Color.rgb(12, 35, 64)),
     CHICAGOCUBS("Chicago Cubs", "CHC", 112, Color.rgb(0, 47, 108)),
@@ -25,7 +25,7 @@ public enum TeamSelection {
     DETROITTIGERS("Detroit Tigers", "DET", 116, Color.rgb(12, 35, 64)),
     HOUSTONASTROS("Houston Astros", "HOU", 117, Color.rgb(0, 45, 98)),
     KANSASCITYROYALS("Kansas City Royals", "KAN", 118, Color.rgb(26, 71, 132)),
-    LOSANGELESANGELSOFANAHEIM("Los Angeles Angels of Anaheim", "LAA", 108, Color.rgb(0, 50, 99)),
+    LOSANGELESANGELS("Los Angeles Angels", "LAA", 108, Color.rgb(186,0,33)),
     LOSANGELESDODGERS("Los Angeles Dodgers", "LAD", 119, Color.rgb(0, 47, 119)),
     MIAMIMARLINS("Miami Marlins", "FLA", 146, Color.rgb(237, 111, 46)),
     MILWAUKEEBREWERS("Milwaukee Brewers", "MIL", 158, Color.rgb(19, 41, 75)),
@@ -55,6 +55,7 @@ public enum TeamSelection {
         this.id = id;
         this.color = color;
     }
+   
 
     public String getName() {
         return name;

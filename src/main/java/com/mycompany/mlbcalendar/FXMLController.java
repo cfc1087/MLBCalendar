@@ -67,6 +67,7 @@ public class FXMLController implements Initializable {
     private Month monthSelected;
     private Spinner spinner;
     private String jsonURL;
+    private Color homeColor;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -104,6 +105,7 @@ public class FXMLController implements Initializable {
             Label label = new Label("" + (i + 1));
 
             label.setFont(Font.font("Versana", FontWeight.BOLD, 14));
+            label.setId("dateNum");
             days[i].getChildren().add(label);
             days[i].setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
             StackPane.setAlignment(label, Pos.TOP_LEFT);
@@ -124,9 +126,10 @@ public class FXMLController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 teamSelected = teamSelection.getValue().toString();
-                teamSelected = teamSelected.replace('.', '_');
-                teamId = TeamSelection.valueOf(teamSelected.replaceAll(" ", "").toUpperCase()).getId();
-                teamSelected = teamSelected.replace('_','.');
+
+                String teamEnum = teamSelected.replace('.', '_').replaceAll(" ", "").toUpperCase();
+                teamId = TeamSelection.valueOf(teamEnum).getId();
+                homeColor = TeamSelection.valueOf(teamEnum).getColor();
                 getMonthSchedule();
             }
         });
@@ -206,6 +209,8 @@ public class FXMLController implements Initializable {
     }
 
     public boolean prevGameExists(int i) {//check if a label with game info already existed. prevents labels overlapping
+        Label dateNum = (Label) days[i - 1].getChildren().get(0);
+        dateNum.setTextFill(Color.BLACK);
         return days[i - 1].getChildren().remove((Label) days[i - 1].lookup("#gameInfo"));
     }
 
@@ -221,7 +226,7 @@ public class FXMLController implements Initializable {
         label.setText(d.getGames()[0].getAway() + "\n" + "@" + "\n" + d.getGames()[0].getHome() + "\n" + gameTime.toLocalTime().format(format) + " " + timeZone);
 
         label.setId("gameInfo");
-        label.setFont(Font.font("Comic Sans MS", FontWeight.MEDIUM, 14));
+        label.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 14));
         days[i - 1].getChildren().add(label);
         days[i - 1].setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         if (isHome(d)) {
@@ -243,12 +248,12 @@ public class FXMLController implements Initializable {
     }
 
     public void homeColor(int i) {
-        Color color;
-        teamSelected = teamSelected.replace('.','_');
 
-        color = TeamSelection.valueOf(teamSelected.replaceAll(" ", "").toUpperCase()).getColor();
-        BackgroundFill fill = new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY);
+        homeColor = TeamSelection.valueOf(teamSelected.replace('.', '_').replaceAll(" ", "").toUpperCase()).getColor();
+        BackgroundFill fill = new BackgroundFill(homeColor, CornerRadii.EMPTY, Insets.EMPTY);
         days[i - 1].setBackground(new Background(fill));
+        Label dateNum = (Label) days[i - 1].getChildren().get(0);
+        dateNum.setTextFill(Color.WHITE);
 
     }
 }
