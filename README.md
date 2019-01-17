@@ -1,7 +1,7 @@
 
 # MLBCalendar
 
-Desktop app that shows the monthly MLB scehdule. The schedule is pulled from the [MLB API](StatsApi.MLB.com) in JSON fromat.
+Desktop app that shows the monthly MLB scehdule. The schedule is pulled from StatsApi.MLB.com in JSON fromat.
 
 <img  src="Images/Capture2.JPG" width="600">
 
