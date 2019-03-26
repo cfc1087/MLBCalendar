@@ -43,7 +43,7 @@ public class readURL {
     public static String createURL(int teamID, int month, int lastDay) {//lastDay - end of the month
 
         ///"http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=147&season=2018&startDate=2018-06-01&endDate=2018-06-30" keep here for reference
-        String s = "http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=" + teamID + "&season=2018&startDate=2018-" + month + "-01&endDate=2018-" + month + "-" + lastDay;
+        String s = "http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=" + teamID + "&season=2019&startDate=2019-" + month + "-01&endDate=2019-" + month + "-" + lastDay;
         return s;
     }
 

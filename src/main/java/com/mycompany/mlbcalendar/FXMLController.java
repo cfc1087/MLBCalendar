@@ -72,8 +72,9 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        time = LocalDateTime.now();
-        date = time.toLocalDate(); //today's date.
+       // time = LocalDateTime.now();
+       
+        date = LocalDate.of(2019, 03, 1);//time.toLocalDate(); //today's date.
         monthSelected = date.getMonth();
         createTeamList();
         createMonthSpinner();
@@ -151,7 +152,7 @@ public class FXMLController implements Initializable {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 monthSelected = (Month) spinner.getValue();
-                date = LocalDate.of(2018, monthSelected, 1);
+                date = LocalDate.of(2019, monthSelected, 1);
                 createDates();
                 if (teamSelected != null) {
                     getMonthSchedule();
