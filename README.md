@@ -16,7 +16,7 @@ After selecting the team, the calendar will fill with the schedule. Home games w
 * Show double headers.
 * Show Win/Loss for games already played.
 * Show suspened games.
-* Save previously selected team and schedule.
+
 
 ## Built With
 
